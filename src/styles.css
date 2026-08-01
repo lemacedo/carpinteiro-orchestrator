@@ -108,6 +108,7 @@ nav { display: grid; gap: 5px; }
 .creative-list { margin: 0; padding: 0; list-style: none; display: grid; gap: 6px; counter-reset: creative-concept; }
 .creative-list li { counter-increment: creative-concept; padding: 8px 9px; border-radius: 7px; background: #211e18; color: #c9b89f; font-size: 9px; }
 .creative-list li::before { content: "0" counter(creative-concept); margin-right: 8px; color: var(--wood); font: 700 8px "Manrope"; }
+.creative-blockers { margin-top: 11px; }
 .id-list { margin: 0; display: grid; gap: 9px; }
 .id-list div, .ports div { display: flex; justify-content: space-between; gap: 10px; }
 .id-list dt, .ports span { color: var(--muted); font-size: 9px; }

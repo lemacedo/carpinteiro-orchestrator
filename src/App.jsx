@@ -183,6 +183,9 @@ function App() {
             <ul className="creative-list">
               {spike.creative.concepts.map((concept) => <li key={concept}>{concept}</li>)}
             </ul>
+            <ul className="blocker-list creative-blockers">
+              {spike.creative.blockers.map((blocker) => <li key={blocker}>{blocker}</li>)}
+            </ul>
           </section>
         )}
 
