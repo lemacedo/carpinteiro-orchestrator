@@ -66,6 +66,26 @@ CTA: Saiba mais
 - conversão da landing page;
 - custo por lead.
 
+## Registro operacional — Ritmo — 2026-08-01
+
+```text
+Conta de anúncios: 1529442677452003
+Campaign ID: 120255839923790715
+Ad Set ID: 120255839923800715
+Ad ID: 120255839923810715
+Campanha: CARPINTEIRO | ritmo | TRAFFIC | BR
+Conjunto: ritmo | BR | broad | 18-45 | R$20 total
+Anúncio: ritmo | og-v1 | saiba-mais
+Destino: https://ritmo.carpinteiro.app/
+UTMs: utm_source=meta&utm_medium=paid_social&utm_campaign=ritmo-validacao&utm_content=og-v1
+Orçamento: R$ 20,00 total
+Período: 2026-08-01 15:24 BRT até 2026-08-02 15:24 BRT
+Público: Brasil, 18–45, amplo
+Status: rascunho e pausado; nenhum gasto
+```
+
+O formulário e o CRM passaram no teste ponta a ponta, mas a campanha não pode ser publicada. O Meta informou pagamentos pendentes na conta, não ofereceu uma Página do Facebook para a identidade do anúncio e recusou o criativo com o erro `#1487194`. Nenhum desses bloqueios autoriza aumentar orçamento, trocar a conta ou publicar com outra identidade. Após regularizar pagamento, Página e permissão do criativo, revisar o preview e publicar mantendo campanha, conjunto e anúncio pausados.
+
 ## Critérios de aceite
 
 - URL final aponta para o site correto;
