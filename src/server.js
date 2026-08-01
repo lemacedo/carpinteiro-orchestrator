@@ -26,6 +26,14 @@ export const spikes = [
     publicUrl: "https://ritmo.carpinteiro.app",
     crmUrl: "https://crm.carpinteiro.app",
     metrics: { visitors: 0, leads: 0, conversionRate: 0, spend: 0, budget: 20, ctr: 0, cpl: null },
+    creative: {
+      status: "BRIEF_REQUIRED",
+      approvalGate: "EXPLICIT_APPROVAL",
+      maxInitialAssets: 6,
+      concepts: ["Problema reconhecível", "Transformação possível", "Demonstração do produto"],
+      formats: ["1:1 · 1080 × 1080", "4:5 · 1080 × 1350", "9:16 · 1080 × 1920"],
+      assets: [],
+    },
     campaign: {
       id: "120255839923790715",
       adSetId: "120255839923800715",
@@ -42,6 +50,7 @@ export const spikes = [
       { id: "page", label: "Landing", status: "done", detail: "ritmo.carpinteiro.app" },
       { id: "deploy", label: "Cloudflare", status: "done", detail: "Build e domínio ativos" },
       { id: "crm", label: "CRM", status: "done", detail: "D1 e captura validados" },
+      { id: "creative", label: "Criativos", status: "waiting", detail: "Briefing e lote inicial pendentes" },
       { id: "meta", label: "Meta Ads", status: "blocked", detail: "Rascunho pausado · R$ 20" },
       { id: "metrics", label: "Tração", status: "waiting", detail: "Aguardando campanha" },
     ],

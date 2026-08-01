@@ -28,6 +28,9 @@ test("returns the Ritmo spike without PII", async () => {
   assert.equal(response.status, 200);
   assert.equal(spike.id, "ritmo");
   assert.equal(spike.metrics.budget, 20);
+  assert.equal(spike.creative.status, "BRIEF_REQUIRED");
+  assert.equal(spike.creative.maxInitialAssets, 6);
+  assert.equal(spike.steps.some(({ id }) => id === "creative"), true);
   assert.equal(spike.campaign.status, "BLOCKED");
   assert.equal(JSON.stringify(spike).includes("email"), false);
   assert.equal(JSON.stringify(spike).includes("phone"), false);

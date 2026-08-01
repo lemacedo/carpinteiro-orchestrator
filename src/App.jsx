@@ -173,14 +173,29 @@ function App() {
           </section>
         )}
 
-        <section>
-          <p className="eyebrow">Identificadores</p>
-          <dl className="id-list">
-            <div><dt>Campaign</dt><dd>{spike.campaign.id}</dd></div>
-            <div><dt>Ad Set</dt><dd>{spike.campaign.adSetId}</dd></div>
-            <div><dt>Ad</dt><dd>{spike.campaign.adId}</dd></div>
-          </dl>
-        </section>
+        {selectedStep?.id === "creative" && (
+          <section>
+            <p className="eyebrow">Pacote inicial</p>
+            <div className="creative-summary">
+              <div><span>Limite do lote</span><strong>{spike.creative.maxInitialAssets} peças</strong></div>
+              <div><span>Gate</span><strong>Aprovação explícita</strong></div>
+            </div>
+            <ul className="creative-list">
+              {spike.creative.concepts.map((concept) => <li key={concept}>{concept}</li>)}
+            </ul>
+          </section>
+        )}
+
+        {selectedStep?.id === "meta" && (
+          <section>
+            <p className="eyebrow">Identificadores</p>
+            <dl className="id-list">
+              <div><dt>Campaign</dt><dd>{spike.campaign.id}</dd></div>
+              <div><dt>Ad Set</dt><dd>{spike.campaign.adSetId}</dd></div>
+              <div><dt>Ad</dt><dd>{spike.campaign.adId}</dd></div>
+            </dl>
+          </section>
+        )}
 
         <section className="ports">
           <p className="eyebrow">Serviços locais</p>

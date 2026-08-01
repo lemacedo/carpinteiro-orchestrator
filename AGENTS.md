@@ -18,6 +18,8 @@ Este módulo é o cérebro do sistema. Ele coordena os outros serviços por API,
 - usar clientes HTTP/eventos versionados;
 - toda ação externa deve ser idempotente;
 - campanhas devem nascer pausadas;
+- criativos nunca devem ser enviados ou publicados sem passar pelos gates de conteúdo, formato e aprovação;
+- não repetir uploads ou publicações automaticamente após alertas de segurança, permissão, cobrança ou rate limit;
 - ativação exige aprovação explícita e limites de gasto;
 - manter Docker como caminho oficial de execução.
 
@@ -29,6 +31,7 @@ O dashboard deve usar React e React Flow, consumir somente a API do próprio Orc
 
 ```text
 DRAFT -> VALIDATED -> PAGE_CREATED -> BUILT -> DEPLOYED
+      -> CREATIVE_BRIEFED -> CREATIVE_GENERATED -> CREATIVE_APPROVED
       -> CAMPAIGN_DRAFTED -> AWAITING_APPROVAL -> ACTIVE
       -> PAUSED | COMPLETED | FAILED
 ```
