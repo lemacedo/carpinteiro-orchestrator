@@ -20,3 +20,24 @@ test("reports service health", async () => {
   assert.equal(response.status, 200);
   assert.deepEqual(await response.json(), { service: "carpinteiro-orchestrator", status: "ok" });
 });
+
+test("returns the Ritmo spike without PII", async () => {
+  const response = await fetch(`${baseUrl}/v1/spikes/ritmo`);
+  const spike = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(spike.id, "ritmo");
+  assert.equal(spike.metrics.budget, 20);
+  assert.equal(spike.campaign.status, "BLOCKED");
+  assert.equal(JSON.stringify(spike).includes("email"), false);
+  assert.equal(JSON.stringify(spike).includes("phone"), false);
+});
+
+test("serves the React dashboard after build", async () => {
+  const response = await fetch(baseUrl);
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /Carpinteiro/);
+  assert.match(html, /src=\"\/assets\//);
+});

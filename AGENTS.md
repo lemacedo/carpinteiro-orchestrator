@@ -4,9 +4,15 @@
 
 Este módulo é o cérebro do sistema. Ele coordena os outros serviços por API, mantém o estado dos spikes e centraliza métricas sem armazenar PII.
 
+## Superfícies do módulo
+
+- API de coordenação e métricas, sem PII;
+- dashboard web local para visualizar o estado dos spikes e operar o fluxo;
+- a API e o dashboard rodam no mesmo container e na mesma porta.
+
 ## Limites
 
-- não conter componentes visuais de landing page ou dashboard;
+- não reproduzir a landing page do produto validado;
 - não persistir e-mail ou telefone de leads;
 - não importar código dos repositórios irmãos;
 - usar clientes HTTP/eventos versionados;
@@ -14,6 +20,10 @@ Este módulo é o cérebro do sistema. Ele coordena os outros serviços por API,
 - campanhas devem nascer pausadas;
 - ativação exige aprovação explícita e limites de gasto;
 - manter Docker como caminho oficial de execução.
+
+## Dashboard
+
+O dashboard deve usar React e React Flow, consumir somente a API do próprio Orchestrator e representar visualmente a máquina de estados. Ele pode exibir totais agregados, URLs públicas, IDs operacionais e bloqueios, mas nunca PII dos leads.
 
 ## Máquina de estados inicial
 
